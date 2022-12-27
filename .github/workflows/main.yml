@@ -9,8 +9,13 @@ jobs:
     name: Hello world
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Write a multi-line message
+    - name: Install Python 3
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+    - name: Install dependencies
       run: |
-        echo This custom demo file shows a 
-        echo very basic and easy-to-understand workflow.
+        python -m pip install --upgrade pip
+        pip install pytest
+    - name: Run tests with pytest
+      run: pytest 
