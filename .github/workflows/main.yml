@@ -1,16 +1,16 @@
 on:
   pull_request:
     types: [opened, reopened]
-    branches:
-      - 'master'
+    branches: 
+      - master
 
 jobs:
   build:
-  name: Hello world
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v2
-  - name: Write a multi-line message
-    run: |
-      echo This custom demo file shows a 
-      echo very very basic and easy-to-understand workflow.
+    name: Hello world
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Write a multi-line message
+      run: |
+        echo This custom demo file shows a 
+        echo very very basic and easy-to-understand workflow.
